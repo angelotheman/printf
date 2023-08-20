@@ -12,6 +12,7 @@ This is the printf project as part of the ALX SWE school
 
 ## Two branches to be created
 1. AngeloDev
-2. Bennet Cobinnah
+2. CobbiahDev
+3. Other branches as necessary for any of the task
 
 # Happy Coding 😎
