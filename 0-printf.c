@@ -22,8 +22,8 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0' || *format == ' ')
-				return (-1);
+			if (*format == '\0')
+				break;
 
 			if (*format == 'c')
 			{
@@ -35,15 +35,7 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(args, char *);
 
-				if (*str == NULL)
-				{
-					print_string("(null");
-					return (6);
-				}
-				else
-				{
-					count += print_string(str);
-				}
+				count += print_string(str);
 			}
 			else if (*format == '%')
 			{
