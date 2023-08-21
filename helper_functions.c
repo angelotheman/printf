@@ -1,16 +1,27 @@
 #include "main.h"
 
 /**
+ * _putchar - print a character to standard output
+ * @c: Character to be printed
+ * Return: total number of characters printed 
+*/
+
+int _putchar(char c)
+{
+  return write(1, &c, 1);
+}
+/**
   * print_char - Function to print a character
   * @c: Args
-  *
+  * @args: function containing arguments
   * Return: 1 for each char called
   */
 
-int print_char(char c)
+int print_char(va_list args)
 {
-        write(1, &c, 1);
-        return (1);
+  char c = va_arg(args, int);
+  _putchar(c);
+  return (1);
 }
 
 /**
