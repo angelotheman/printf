@@ -9,8 +9,8 @@
 
 int print_char(char c)
 {
-        write(1, &c, 1);
-        return (1);
+	write(1, &c, 1);
+	return (1);
 }
 
 /**
@@ -22,10 +22,9 @@ int print_char(char c)
 
 int print_string(char *str)
 {
-        int count;
+	int count;
 
-        count = strlen(str);
-
-        write(1, str, strlen(str));
-        return (count);
+	count = strlen(str);
+	write(1, str, strlen(str));
+	return (count);
 }
