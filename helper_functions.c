@@ -26,7 +26,8 @@ int print_string(char *str)
 
 	if (str == NULL)
 	{
-		return (print_string("null"));
+		write(1, "(null)", 6);
+		return (6);
 	}
 	else
 	{
