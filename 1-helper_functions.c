@@ -20,7 +20,7 @@ int _putchar(char c)
 
 int print_int(va_list args)
 {
-	int num = va_arg(args, int);
+	long num = va_arg(args, long);
 	int count = 0;
 
 	if (num < 0)
