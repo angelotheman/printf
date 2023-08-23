@@ -5,7 +5,6 @@
   * @c: Args
   *
   * Return: 1 for each char called
- 
  */
 
 int print_char(char c)
