@@ -1,114 +1,44 @@
+#include <limits.h>
 #include <stdio.h>
 #include "main.h"
-#include <limits.h>
 
-int main()
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
 {
-	char ch = 'a';
-	char *name = "a name";
-	int len = 0;
-	int len2 = 0;
-	char *str = "test";
+    int len;
+    int len2;
+    unsigned int ui;
+    void *addr;
 
-        len = _printf("% ");
-	len2 = printf("% ");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("xyz\n");
-	len2 = printf("xyz\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("letter %c\n", ch);
-	len2 = printf("letter %c\n", ch);
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("hello %s\n", name);
-	len2 = printf("hello %s\n", name);
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("hello %shi\n", name);
-	len2 = printf("hello %shi\n", name);
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("zero %\n");
-	len2 = printf("zero %\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("one %%\n");
-	len2 = printf("one %%\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("one %%%\n");
-	len2 = printf("one %%%\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("two %%%%\n");
-	len2 = printf("two %%%%\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("two %%%%%\n");
-	len2 = printf("two %%%%%\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("A %s sentence\n", "simple");
-	len2 = printf("A %s sentence\n", "simple");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("A %c%c%s sentence\n", 's', 'i', "mple");
-	len2 = printf("A %c%c%s sentence\n", 's', 'i', "mple");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("A simple %v entence\n");
-	len2 = printf("A simple %v entence\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("Percentage: %%\n");
-	len2 = printf("Percentage: %%\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("NULL: %c, %s\n", NULL, NULL);
-	len2 = printf("NULL: %c, %s\n", NULL, NULL);
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("%");
-	len2 = printf("%");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("A simple sentence%");
-	len2 = printf("\nA simple sentence%");
-	printf("\nLen:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("% ");
-	len2 = printf("% ");
-	printf("\nLen:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("% s\n", str);
-	len2 = printf("% s\n", str);
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	len = _printf("\\\n");
-	len2 = printf("\\\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-
-	return (0);
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+    ui = (unsigned int)INT_MAX + 1024;
+    addr = (void *)0x7ffe637541f0;
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+    _printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
+    _printf("Unsigned:[%u]\n", ui);
+    printf("Unsigned:[%u]\n", ui);
+    _printf("Unsigned octal:[%o]\n", ui);
+    printf("Unsigned octal:[%o]\n", ui);
+    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+    _printf("Address:[%p]\n", addr);
+    printf("Address:[%p]\n", addr);
+    len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    _printf("Unknown:[%r]\n");
+    printf("Unknown:[%r]\n");
+    return (0);
 }
