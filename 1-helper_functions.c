@@ -11,20 +11,6 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-/**
-  * print_char - Function to print a character
-  * @args: function containing arguments
-  * Return: 1 for each char called
-  */
-
-int print_char(va_list args)
-{
-	char c = va_arg(args, int);
-
-	_putchar(c);
-	return (1);
-}
-
 
 /**
  * print_int - prints an integer
