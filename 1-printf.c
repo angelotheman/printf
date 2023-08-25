@@ -16,8 +16,6 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			while (*(format + 1) == ' ')
-				format++;
 			format++;
 			if (*format == '\0')
 				break;
